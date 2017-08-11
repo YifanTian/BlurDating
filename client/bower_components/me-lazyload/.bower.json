@@ -1,0 +1,34 @@
+{
+  "name": "me-lazyload",
+  "main": "me-lazyload.js",
+  "version": "0.0.5",
+  "homepage": "https://github.com/jeremial/me-lazyload",
+  "authors": [
+    "Jeremial <jeremial90@gmail.com>"
+  ],
+  "description": "image lazyload directive for angular",
+  "keywords": [
+    "angular",
+    "lazyload"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.20"
+  },
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.5",
+    "commit": "0c8ea398c09801d63382ff652f8fb70be0f65658"
+  },
+  "_source": "https://github.com/Treri/me-lazyload.git",
+  "_target": "^0.0.5",
+  "_originalSource": "me-lazyload"
+}
