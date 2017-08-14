@@ -14,6 +14,12 @@ import { ChatWindowComponent } from './components/chat-window/chat-window.compon
 import { DataService } from './services/data.service';
 // import { ChatroomsService } from './services/chatrooms.service';
 
+// routing import 
+import { routing } from './app.routes';
+
+// service import 
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +33,15 @@ import { DataService } from './services/data.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule // <-- #2 add to @NgModule imports
+    ReactiveFormsModule, // <-- #2 add to @NgModule imports
+    routing
   ],
   providers: [
     {
       provide: 'data',
       useClass: DataService
-    }
+    },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
