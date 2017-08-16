@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule, ToastOptions } from 'ng2-toastr/ng2-toastr';
 
 import { AppComponent } from './app.component';
 import { ProblemsComponent } from './components/problems/problems.component';
@@ -19,6 +21,7 @@ import { routing } from './app.routes';
 
 // service import 
 import { AuthService } from './services/auth.service';
+import { ToastrService, CustomOption } from './services/toastr.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     HttpModule,
     ReactiveFormsModule, // <-- #2 add to @NgModule imports
+    BrowserAnimationsModule,
+    ToastModule.forRoot(),
     routing
   ],
   providers: [
@@ -41,7 +46,9 @@ import { AuthService } from './services/auth.service';
       provide: 'data',
       useClass: DataService
     },
-    AuthService
+    AuthService,
+    ToastrService,
+    { provide: ToastOptions, useClass: CustomOption },
   ],
   bootstrap: [AppComponent]
 })
