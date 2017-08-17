@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
 
+
 @Injectable()
 export class AuthService {
   userProfile = new BehaviorSubject<any>(undefined);
