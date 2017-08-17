@@ -22,13 +22,14 @@ export class ProblemsComponent implements OnInit {
   matchArray: Match[];
 
   subscriptionProblem = Subscription;
+  subscriptionPeople = Subscription;
   constructor(@Inject('data') private data) { }
 
   ngOnInit() {
     this.getProblems();
-    this.initAnswers();
+    // this.initAnswers();
     this.getPeoples();
-    this.initMatches();
+    // this.initMatches();
   }
 
   sortMatchesByAge(order: number) {
@@ -63,7 +64,7 @@ export class ProblemsComponent implements OnInit {
       for(let match of this.matchArray)
       {
         match.weight = 0;
-        console.log(match.id+" "+match.answers[id]);
+        // console.log(match.id+" "+match.answers[id]);
       }
 
     for(let match of this.matchArray)
@@ -73,7 +74,7 @@ export class ProblemsComponent implements OnInit {
         if(this.aArray[question] !== 3) {
           if(question in match.answers)                           // he or she has anwered this question
           {
-            console.log("find a match " + question + " " + match.id + " " + match.answers[question]);
+            // console.log("find a match " + question + " " + match.id + " " + match.answers[question]);
             match.weight += this.aArray[question] === match.answers[question]? 1:-1;
           }
         }
@@ -93,7 +94,7 @@ export class ProblemsComponent implements OnInit {
       this.answerArray.push(ans);
       // this.answerArray[problem.id] = 3;
     }
-    console.log(this.answerArray);
+    // console.log(this.answerArray);
   }
 
   initMatches(): void {
@@ -111,23 +112,32 @@ export class ProblemsComponent implements OnInit {
       this.matchArray.push(match);
       // this.answerArray[problem.id] = 3;
     }
-    console.log(this.answerArray);
+    // console.log(this.answerArray);
   }
 
   pin(match:Match):void {
-    console.log(match.id + " pinned "+ match.fav);
+    // console.log(match.id + " pinned "+ match.fav);
     match.fav = !match.fav;
-    console.log(match.fav);
+    // console.log(match.fav);
   }
 
   getProblems(): void {
-    this.problems = this.data.getProblems();
-    // this.subscriptionProblem = this.data.getProblems()
-    // .subscribe(problems => this.problems = problems);
+    // this.problems = this.data.getProblems();
+    this.subscriptionProblem = this.data.getProblems()
+    .subscribe(problems => {this.problems = problems; this.initAnswers();} );
   }
 
+  // getProblems(): void {
+  //   // this.problems = this.dataService.getProblems();
+  //   this.subscriptionProblem = this.data.getProblems()
+  //   .subscribe(problems => this.problems = problems);
+  // }
+
   getPeoples(): void {
-    this.peoples = this.data.getPeoples();
+    // this.peoples = this.data.getPeoples();
+    this.subscriptionPeople = this.data.getPeoples()
+    .subscribe(peoples => {this.peoples = peoples; this.initMatches();});
+    // console.log(this.peoples);
   }
 
   // getChoice(id:number,choice:number): void {
@@ -135,5 +145,17 @@ export class ProblemsComponent implements OnInit {
   //     this.answerArray[id] = choice;
   //     console.log(this.answerArray);
   // }
+
+  openNav():void  {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+
+  closeNav():void {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+  }
 
 }

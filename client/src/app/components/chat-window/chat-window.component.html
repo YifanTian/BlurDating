@@ -1,3 +1,52 @@
-<p>
-  chat-window works!
-</p>
+<section>
+
+  <!-- <div class="list-group" *ngFor="let message of allmessages">
+    {{message.user}}: {{message.info}}
+  </div> -->
+
+    <div id="scrollArea" ng-controller="ScrollController">
+      <!-- <a ng-click="gotoBottom()">Go to bottom</a> -->
+
+      <div class="list-group" *ngFor="let message of allmessages">
+        <!--{{message.user}},{{message.info}}-->
+        <!-- <div id="bottom"> -->
+          <div *ngIf=" message.user ==='myself'">
+              <!-- <div class="pull-right">  -->
+                <!-- <img src="../../../img/Last_Round.jpg" class="img-rounded" alt="Cinque Terre" width="30" height="20"> -->
+                <h3 class ="text-right">
+                  {{message.info}}
+                  <img src="../../../img/myself.jpg" class="img-rounded" alt="Cinque Terre" width="35" height="35">
+                </h3>
+              <!-- </div>  -->
+          </div>
+          <div *ngIf=" message.user !== 'myself'">
+            <!-- <div class="pull-left"> -->
+              <h3 class ="text-left">
+                <img src="../../../img/Last_Round.jpg" class="img-rounded" alt="Cinque Terre" width="35" height="25">
+                {{message.info}}
+              </h3>
+            <!-- </div> -->
+          <!-- </div> -->
+        </div>
+      </div>
+      
+      <!-- <a id="bottom"></a> You're at the bottom! -->
+    </div>
+
+  <!--<input class="inputMessage" placeholder="Type here..." [(ngModel)]="inputMessage"/>-->
+  <form #formRef="ngForm">
+      <div class="form-group">
+        <input name="sendmessage" id="sendmessage" class="form-control"
+              type="text" required placeholder="Enter message here..."
+              [(ngModel)]="inputMessage">
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary pull-right"
+                  (click)="sendMessage()"
+          >send</button>
+        </div>
+      </div>
+  </form>
+
+</section>

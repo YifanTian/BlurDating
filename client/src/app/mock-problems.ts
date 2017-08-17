@@ -36,4 +36,4 @@ Find all unique quadruplets in the array which gives the sum of target.`,
     desc: `Given an array of n integer with duplicate number, and a moving window(size k), move the window at each iteration from the start of the array, find the maximum number inside the window at each moving.`,
     type: "others"
   }
-]
+];

@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "../public",
       "assets": [
         "assets",
         "favicon.ico",
@@ -26,7 +26,8 @@
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../node_modules/auth0-js/build/auth0.min.js"
+        "../node_modules/auth0-js/build/auth0.min.js",
+        "../node_modules/socket.io-client/dist/socket.io.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

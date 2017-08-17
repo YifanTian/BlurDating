@@ -1,6 +1,8 @@
 .navbar-background {
   width: 100%;
+  top: 0;
   padding-left: 0;
   padding-right: 0;
   background-image: url("../../../img/navbg.jpg");
+   /* position: fixed;  */
 }

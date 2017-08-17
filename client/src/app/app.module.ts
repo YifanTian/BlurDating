@@ -11,6 +11,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PeopleDetailComponent } from './components/people-detail/people-detail.component';
 import { ChatWindowComponent } from './components/chat-window/chat-window.component';
 
+import { ChatService } from './services/chat.service';
+
 import { DataService } from './services/data.service';
 // import { ChatroomsService } from './services/chatrooms.service';
 
@@ -19,6 +21,8 @@ import { routing } from './app.routes';
 
 // service import 
 import { AuthService } from './services/auth.service';
+import { ProfileComponent } from './components/profile/profile.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { AuthService } from './services/auth.service';
     PeoplesComponent,
     NavbarComponent,
     PeopleDetailComponent,
-    ChatWindowComponent
+    ChatWindowComponent,
+    ProfileComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,8 @@ import { AuthService } from './services/auth.service';
       provide: 'data',
       useClass: DataService
     },
-    AuthService
+    AuthService,
+    ChatService
   ],
   bootstrap: [AppComponent]
 })

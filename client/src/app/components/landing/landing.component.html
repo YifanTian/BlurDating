@@ -1,0 +1,85 @@
+  
+
+
+<div class="container">
+  <a class="list-group-item" [routerLink]="['/problems']">
+
+      <div class="row">
+        <h1>Welcome to Blur!</h1>
+        <img src="../../../img/Last_Round.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="336">
+      </div>
+
+    <!-- <img src="{{match.img}}" class="img-responsive" alt="Chania" width="260" height="245"> -->
+  </a>
+  <div class="list-group">
+    <a class="list-group-item" *ngFor="let answer of answerArray">
+    <span class="{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}">
+      {{answer.type}}
+    </span>
+    <strong class="title">{{answer.id}}  {{answer.name}} </strong>
+      <div class="pull-right">
+        <strong class="title">{{answer.choice}}</strong>
+      </div>
+
+    <form #formRef="ngForm">
+      <!-- <div class="form-group">
+        <label for="Choice">Choice</label>
+        <select class="form-control" id="choice" name="choice"
+                [(ngModel)]="answer.choice">
+          <option *ngFor="let choice of choices" [value]="choice">
+            {{choice}}
+          </option>
+        </select>
+      </div>  -->
+
+      <div class="form-group radio">
+        <h4>Your Choice:</h4> 
+        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=1 (click)="selectEntity(answer.id,1)">Yes</label>
+        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=2 (click)="selectEntity(answer.id,2)">No</label>
+        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=3 (click)="selectEntity(answer.id,3)">Unknown</label>
+      </div>
+    </form>
+
+    </a> 
+  </div>
+
+  <div>
+    <form #formRef="ngForm">
+
+      <div class="form-group">
+        <label for="peopleName">People name</label>
+        <input name="peopleName" id="peopleName" class="form-control"
+              type="text" required placeholder="Enter your name"
+              [(ngModel)]="newPeople.name">
+      </div>
+
+      <div class="form-group">
+        <label for="problemDesc">People description</label>
+        <textarea name="problemDesc" id="problemDesc" class="form-control"
+                  required placeholder="Enter your description"
+                  [(ngModel)]="newPeople.desc" rows="3">
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="difficulty">Type</label>
+        <select class="form-control" id="difficulty" name="difficulty"
+                [(ngModel)]="newPeople.desc">
+          <option *ngFor="let difficulty of difficulties" [value]="difficulty">
+            {{difficulty}}
+          </option>
+        </select>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary pull-right"
+                  (click)="addPeople()"
+          >Add people</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br/>
+
+</div>

@@ -1,136 +1,146 @@
 
-<div class="container">
 
-<div class="list-group">
-    <a class="list-group-item" *ngFor="let answer of answerArray">
-    <span class="{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}">
-      {{answer.type}}
-    </span>
-    <strong class="title">{{answer.id}}  {{answer.name}} </strong>
-      <div class="pull-right">
-      <strong class="title">{{answer.choice}}</strong>
-      </div>
+<!-- <div class="col-xs-12 col-md-2">
+      <p>Profile</p>
+      <p>History</p>
+      <p>Setting</p>
+</div> -->
+  <!-- <div class="col-xs-12 col-md-12"> -->
 
-    <form #formRef="ngForm">
-      <!-- <div class="form-group">
-        <label for="Choice">Choice</label>
-        <select class="form-control" id="choice" name="choice"
-                [(ngModel)]="answer.choice">
-          <option *ngFor="let choice of choices" [value]="choice">
-            {{choice}}
-          </option>
-        </select>
-      </div>  -->
+    <!-- <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div> -->
 
-      <div class="form-group radio">
-        <h4>Your Choice:</h4> 
-        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=1 (click)="selectEntity(answer.id,1)">Yes</label>
-        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=2 (click)="selectEntity(answer.id,2)">No</label>
-        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=3 (click)="selectEntity(answer.id,3)">Unknown</label>
-      </div>
-    </form>
+  <div class="container">
+     <div class="col-xs-12 col-md-2">
+      <!-- <p>Profile</p>
+      <p>History</p>
+      <p>Setting</p> -->
 
-    </a> 
-  </div>
-
-<div class="row">
-  <div class="col-xs-12 col-md-10"></div>
-  <div class="col-xs-6 col-md-2">
-
-    <div class="btn-group">
-      <button type="button" class="btn btn-danger">Sort By</button>
-      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul class="dropdown-menu">
-         <li><a type="button" class="btn btn-default" (click)="sortMatchesByAge(1)" >Age Up</a></li> 
-         <li><a type="button" class="btn btn-default" (click)="sortMatchesByAge(2)" >Age Dn</a></li> 
-      </ul>
-    </div>
-
-  </div>
-</div>
-<br/>
-
-    <div class="list-group">
-    <a class="list-group-item" *ngFor="let match of matchArray" >
-      <div class="row">
-        <div class="col-md-3">
-          <div class="thumbnail">
-              <img src="{{match.img}}" class="img-responsive" alt="Chania" width="260" height="245">
-              <div class="caption">
-              </div>
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
           </div>
+
+      <div class="vertical-menu">
+        <!-- <h1>Vertical Menu</h1> -->
+        <a href="#" class="active">Home</a>
+        <a href="#">Profile</a>
+        <!-- <a href="#">History</a> -->
+        <a (click)="openNav()">History</a>
+        <a (click)="openNav()">Faverites</a>
+        <!-- <a href="#">Faverite</a> -->
+        <a href="#">Setting</a>
+        <a href="#">About Us</a>
+        <!-- <a (click)="openNav()">About Us</a> -->
+      </div>
+    </div> 
+
+    <div class="col-xs-12 col-md-10">
+      <div class="list-group">
+          <a class="list-group-item" *ngFor="let answer of answerArray">
+          <span class="{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}">
+            {{answer.type}}
+          </span>
+          <strong class="title">{{answer.id}}  {{answer.name}} </strong>
+            <div class="pull-right">
+              <strong class="title">{{answer.choice}}</strong>
+            </div>
+
+          <form #formRef="ngForm">
+            <!-- <div class="form-group">
+              <label for="Choice">Choice</label>
+              <select class="form-control" id="choice" name="choice"
+                      [(ngModel)]="answer.choice">
+                <option *ngFor="let choice of choices" [value]="choice">
+                  {{choice}}
+                </option>
+              </select>
+            </div>  -->
+
+            <div class="form-group radio">
+              <h4>Your Choice:</h4> 
+              <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=1 (click)="selectEntity(answer.id,1)">Yes</label>
+              <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=2 (click)="selectEntity(answer.id,2)">No</label>
+              <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=3 (click)="selectEntity(answer.id,3)">Unknown</label>
+            </div>
+          </form>
+
+          </a> 
         </div>
 
-        <div class="col-xs-6">
-            <div class="a-card-pin">
-              <div class="a-card-pin-icon">
-                  <img src="../../../img/pushpin-64.png" class="{{'a-card-' + match.fav}}" (click)="pin(match)">
-                 </div>
-              </div> 
-            <dl>
-              Name: <strong class="title">{{match.name}}</strong>
-            </dl>
-            <dl>
-              Age: <strong class="title">{{match.age}}</strong>
-            </dl>
-            <!-- <dl>
-              Answers: <strong class="title">{{match.answers}}</strong>
-            </dl> -->
-            <dl>
-              Similarity: <strong class="title">{{match.weight}}</strong>
-            </dl>
-            <dl>
-              Faverite: <strong class="title">{{match.fav}}</strong>
-            </dl>
-            <dl>
-              <a class="btn" href="#">View details »</a>
-              <a class="btn" href="#">Chat »</a>
-            </dl>
-            <button type="button" class="btn btn-danger">Leave a Message</button>&nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-danger">Send a gift</button>
+      <div class="row">
+        <div class="col-xs-12 col-md-10"></div>
+        <div class="col-xs-6 col-md-2">
+
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger">Sort By</button>
+            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a type="button" class="btn btn-default" (click)="sortMatchesByAge(1)" >Age Up</a></li> 
+              <li><a type="button" class="btn btn-default" (click)="sortMatchesByAge(2)" >Age Dn</a></li> 
+            </ul>
+          </div>
+
         </div>
       </div>
+      <br/>
 
-    </a>
-  </div>
+          <div class="list-group">
+          <a class="list-group-item" *ngFor="let match of matchArray" 
+          [routerLink]="['/peoples', match.id]">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="{{match.img}}" class="img-responsive" alt="Chania" width="260" height="245">
+                    <div class="caption">
+                    </div>
+                </div>
+              </div>
 
-	<div class="row clearfix">
-		<div class="col-md-4 column">
-			<h2>
-				Heading
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				 <a class="btn" href="#">View details »</a>
-			</p>
-		</div>
-		<div class="col-md-4 column">
-			<h2>
-				Heading
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				 <a class="btn" href="#">View details »</a>
-			</p>
-		</div>
-		<div class="col-md-4 column">
-			<h2>
-				Heading
-			</h2>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				 <a class="btn" href="#">View details »</a>
-			</p>
-		</div>
-  </div>
+              <div class="col-xs-6">
+                  <div class="a-card-pin">
+                    <div class="a-card-pin-icon">
+                        <img src="../../../img/pushpin-64.png" class="{{'a-card-' + match.fav}}" (click)="pin(match)">
+                      </div>
+                    </div> 
+                  <dl>
+                    Name: <strong class="title">{{match.name}}</strong>
+                  </dl>
+                  <dl>
+                    Age: <strong class="title">{{match.age}}</strong>
+                  </dl>
+                  <!-- <dl>
+                    Answers: <strong class="title">{{match.answers}}</strong>
+                  </dl> -->
+                  <dl>
+                    Similarity: <strong class="title">{{match.weight}}</strong>
+                  </dl>
+                  <dl>
+                    Faverite: <strong class="title">{{match.fav}}</strong>
+                  </dl>
+                  <dl>
+                    <a class="btn" [routerLink]="['/peoples', match.id]">View details »</a>
+                    <a class="btn" [routerLink]="['/peoples', match.id]">Chat »</a>
+                  </dl>
+                  <button type="button" class="btn btn-danger">Leave a Message</button>&nbsp;&nbsp;&nbsp;
+                  <button type="button" class="btn btn-danger">Send a gift</button>
+              </div>
+            </div>
 
-</div> 
+          </a>
+        </div>
+    </div>
+  </div> 
+
+  <!-- </div> -->

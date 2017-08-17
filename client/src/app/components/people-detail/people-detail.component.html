@@ -1,3 +1,16 @@
-<p>
-  people-detail works!
-</p>
+<div class="container" *ngIf = "people">
+  <div class="col-xs-12 col-md-4">
+    <h2>
+      {{people.id}}. {{people.name}}
+    </h2>
+    <p>
+      {{people.desc}}
+    </p>
+    <img src="{{people.img}}" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+  </div>
+
+  <div class="hidden-xs col-sm-12 col-md-8">
+    <app-chat-window></app-chat-window>
+  </div>
+  
+</div>

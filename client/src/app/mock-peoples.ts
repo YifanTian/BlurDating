@@ -40,5 +40,5 @@ export const PEOPLES: People[] = [
     age: 22,
     img: "../../../img/marie-rose-21.jpg",
     answers: {5:1,1:2}
-  },
-]
+  }
+];
