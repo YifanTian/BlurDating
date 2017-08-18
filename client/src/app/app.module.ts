@@ -23,12 +23,12 @@ import { routing } from './app.routes';
 
 // service import 
 import { AuthService } from './services/auth.service';
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import { ProfileComponent } from './components/profile/profile.component';
 import { LandingComponent } from './components/landing/landing.component';
-=======
+// =======
 import { ToastrService, CustomOption } from './services/toastr.service';
->>>>>>> d735769e0d332e04643a913b6854f769a93b3b9b
+// >>>>>>> d735769e0d332e04643a913b6854f769a93b3b9b
 
 @NgModule({
   declarations: [
@@ -56,12 +56,12 @@ import { ToastrService, CustomOption } from './services/toastr.service';
       useClass: DataService
     },
     AuthService,
-<<<<<<< HEAD
-    ChatService
-=======
+// <<<<<<< HEAD
+    ChatService,
+// =======
     ToastrService,
     { provide: ToastOptions, useClass: CustomOption },
->>>>>>> d735769e0d332e04643a913b6854f769a93b3b9b
+// >>>>>>> d735769e0d332e04643a913b6854f769a93b3b9b
   ],
   bootstrap: [AppComponent]
 })
