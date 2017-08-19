@@ -2,8 +2,14 @@
 Website for blur dating app.
 
 ##### How to install this project
+### Please install nodejs, redis first.
 
 Run following command in your terminal:
+
+1. cd BlurDating. 
+2. sh launch.sh (if nodejs, redis isinstalled)
+
+or
 
 1. git clone https://github.com/YifanTian/BlurDating.git
 2. cd BlurDating.
