@@ -7,7 +7,11 @@ Run following command in your terminal:
 
 1. git clone https://github.com/YifanTian/BlurDating.git
 2. cd BlurDating.
-2. npm install, (if npm is not installed, install Node.js)
-3. npm start (or ng serve).
+3. cd client
+4. npm install, (if npm is not installed, install Node.js)
+5. ng build
+6. cd server
+7. npm install
+8. npm start
 
-Now you should be able to access the project by going to http://localhost:4200 in your browser.
+Now you should be able to access the project by going to http://localhost:3000 in your browser.
