@@ -545,3 +545,7 @@ label {
 	padding: 2.5%;
 	top: 17%;
 }
+
+a {
+    cursor: pointer;
+}

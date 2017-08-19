@@ -147,9 +147,15 @@
                     <div class="col-xs-3">
                       <strong class="title">Current state: </strong>
                         <br/>  <br/>
-                      <div class="list-group-item" *ngFor="let state of match.state">
+                      <div class="list-group-item">
                           <dl>
-                            <a href="{{state}}"> {{state}} </a>
+                            <a href="{{ match.state.video.url }}"> {{ match.state.video.title }} </a>
+                          </dl>
+                          <dl>
+                            <a href="{{ match.state.article.url }}"> {{ match.state.article.title }} </a>
+                          </dl>
+                          <dl>
+                            {{ match.state.description }}
                           </dl>
                       </div> 
                         <!-- <strong class="title">Current state: </strong> {{match.state}} -->

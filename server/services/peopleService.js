@@ -58,7 +58,11 @@ let PEOPLES = [
     img: "../../../img/nier.jpg",
     answers: {1:1,2:2},
     status: true,
-    state: ['http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19','state2','state3']
+    state: {
+        video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
+        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        description: `I'm feeling good`
+    }
   },
   {
     id: 2,
@@ -68,7 +72,11 @@ let PEOPLES = [
     img: "../../../img/honoka.jpg",
     answers: {2:1,3:2},
     status: false,
-    state: ['http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19','state2','state3']
+    state: {
+        video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
+        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        description: `I'm feeling good`
+    }
   },
   {
     id: 3,
@@ -78,7 +86,11 @@ let PEOPLES = [
     img: "../../../img/kasumi_2.jpeg",
     answers: {3:1,4:2},
     status: true,
-    state: ['http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19','state2','state3']
+    state: {
+        video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
+        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        description: `I'm feeling good`
+    }
   },
   {
     id: 4,
@@ -88,7 +100,11 @@ let PEOPLES = [
     img: "../../../img/tina.jpg",
     answers: {4:1,5:2},
     status: false,
-    state: ['http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19','state2','state3']
+    state: {
+        video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
+        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        description: `I'm feeling good`
+    }
   },
   {
     id: 5,
@@ -98,7 +114,11 @@ let PEOPLES = [
     img: "../../../img/marie-rose-21.jpg",
     answers: {5:1,1:2},
     status: true,
-    state: ['http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19','state2','state3']
+    state: {
+        video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
+        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        description: `I'm feeling good`
+    }
   }
 ];
 

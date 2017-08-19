@@ -7,5 +7,5 @@ export class People {
     answers: {};
     desc: String;
     status: boolean;
-    state: String[]
+    state: object
 }

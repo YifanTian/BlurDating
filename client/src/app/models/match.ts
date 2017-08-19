@@ -10,5 +10,5 @@ export class Match {
     answers: {};
     fav: boolean;
     status: boolean;
-    state: String[]
+    state: object
 }

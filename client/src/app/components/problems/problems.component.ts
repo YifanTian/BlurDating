@@ -135,7 +135,7 @@ export class ProblemsComponent implements OnInit {
       //   console.log(state);
       // }
       console.log(people.state);
-      match.state = people.state.splice(0,2);
+      match.state = people.state;
       console.log(match.state);
       this.matchArray.push(match);
       // this.answerArray[problem.id] = 3;

@@ -16,7 +16,7 @@ export class AuthService {
     domain: 'jackiewang5566.auth0.com',
     responseType: 'token id_token',
     audience: 'https://jackiewang5566.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200',      
+    redirectUri: 'http://localhost:3000',      
     scope: 'openid profile'
   });
   
