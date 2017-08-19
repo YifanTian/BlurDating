@@ -6,6 +6,7 @@ export class Match {
     age: number;
     img: String;
     desc: String;
+    poke: boolean;
     weight: number;
     answers: {};
     fav: boolean;

@@ -18,21 +18,48 @@
   <div class="container">
      <div class="col-xs-12 col-md-2">
 
-          <div id="mySidenav" class="sidenav">
+          <!-- <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
-          </div>
+          </div> -->
+
+      <div id="myHistory" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeHistoryNav()">&times;</a>
+
+        <div class="list-group-item" *ngFor="let poke of pokePeoples">
+           <h3> {{poke.name}} </h3>
+            <img src="{{poke.img}}" [routerLink]="['/peoples', poke.id]" class="img-responsive" alt="Chania" width="60" height="45">
+        </div>
+        <!-- <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+
+      </div>
+
+      <div id="myFavorites" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeFavoritesNav()">&times;</a>
+
+        <div class="list-group-item" *ngFor="let fav of favPeoples">
+           <h3> {{fav.name}} </h3>
+            <img src="{{fav.img}}" [routerLink]="['/peoples', fav.id]" class="img-responsive" alt="Chania" width="60" height="45" >
+        </div>
+        <!-- <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+      </div>
 
       <div class="vertical-menu">
         <!-- <h1>Vertical Menu</h1> -->
         <a href="#" class="active">Home</a>
         <a href="#">Profile</a>
         <!-- <a href="#">History</a> -->
-        <a (click)="openNav()">History</a>
-        <a (click)="openNav()">Faverites</a>
+        <a (click)="openHistory()">History</a>
+        <a (click)="openFavorites()">Favorites</a> 
         <!-- <a href="#">Faverite</a> -->
         <a href="#">Setting</a>
         <a href="#">About Us</a>
@@ -105,7 +132,7 @@
             <div class="list-group-item" *ngFor="let match of matchArray">
 
               <div class="row">
-                    <div [ngClass]=" numfavs <= 1 || match.fav == true ? 'active' : 'unactive' ">
+                    <div [ngClass]=" (numfavs+numpokes) <= 1 || match.fav == true || match.poke == true ? 'active' : 'unactive' ">
 
                     <div class="col-md-3">
                       <a class="thumbnail" [routerLink]="['/peoples', match.id]">
@@ -140,7 +167,7 @@
                           <a class="title" [routerLink]="['/peoples', match.id]">View details »</a> &nbsp; &nbsp;
                           <a class="title" [routerLink]="['/peoples', match.id]">Chat »</a>
                         </dl>
-                          <button type="button" class="btn btn-danger">Poke</button>&nbsp; 
+                          <button type="button" class="btn btn-danger" (click)="poke(match)">Poke</button>&nbsp; 
                         <button type="button" class="btn btn-danger">Send a gift</button> 
                     </div>
 

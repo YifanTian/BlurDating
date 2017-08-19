@@ -31,8 +31,13 @@ export class ProblemsComponent implements OnInit {
   questionType: Type;
 
   numfavs = 0;
+  numpokes = 0;
   peoples: People[];
   matchArray: Match[];
+  favArray = [];
+  pokeArray = [];
+  pokePeoples = [];
+  favPeoples = [];
 
   subscriptionProblem = Subscription;
   subscriptionPeople = Subscription;
@@ -144,11 +149,33 @@ export class ProblemsComponent implements OnInit {
   }
 
   pin(match:Match):void {
-    // console.log(match.id + " pinned "+ match.fav);
     match.fav = !match.fav;
     match.fav == true? this.numfavs++ : this.numfavs--;
-    console.log(this.numfavs);
+    if(match.fav) {
+      this.favArray.push(match.id)
+      this.favPeoples.push(match);
+    } else {
+      this.favArray.splice(this.favArray.indexOf(match.id),1);
+      this.favPeoples.splice(this.favPeoples.indexOf(match),1);
+    }
+    console.log(this.favArray);
+    this.data.setHistory(this.favArray);
+    console.log('history: '+this.data.getHistory());
   }
+
+    poke(match:Match):void {
+      if(!match.poke) {
+        console.log('sent a message!');
+        match.poke = !match.poke;
+        this.pokeArray.push(match.id);
+        match.poke == true? this.numpokes++ : this.numpokes--;
+        this.pokePeoples.push(match);
+      }
+      console.log(this.pokeArray);
+      this.data.setHistory(this.pokeArray);
+      console.log('history: '+this.data.getHistory());
+      // this.data.updatePokes(this.pokeArray); 
+    }
 
   getProblems(): void {
 
@@ -206,6 +233,9 @@ export class ProblemsComponent implements OnInit {
       if(this.problems.length === 0) {
         this.shuffle(this.shuffleProblems);
         this.problems = this.shuffleProblems.slice(0,5);
+      } else {
+        this.shuffle(this.problems);
+        this.problems = this.problems.slice(0,5);
       }
       console.log(this.question_choice);
       console.log(this.problems);
@@ -219,6 +249,7 @@ export class ProblemsComponent implements OnInit {
   // }
 
   getPeoples(): void {
+    console.log(this.data.getHistory());
     // this.peoples = this.data.getPeoples();
     this.subscriptionPeople = this.data.getPeoples()
     .subscribe(peoples => {this.peoples = peoples; this.initMatches();});
@@ -231,14 +262,26 @@ export class ProblemsComponent implements OnInit {
   //     console.log(this.answerArray);
   // }
 
-  openNav():void  {
-    document.getElementById("mySidenav").style.width = "250px";
+  openHistory():void  {
+    document.getElementById("myHistory").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
 
-  closeNav():void {
-    document.getElementById("mySidenav").style.width = "0";
+  openFavorites():void  {
+    document.getElementById("myFavorites").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+
+  closeHistoryNav():void {
+    document.getElementById("myHistory").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+  }
+
+  closeFavoritesNav():void {
+    document.getElementById("myFavorites").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
   }

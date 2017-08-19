@@ -17,6 +17,7 @@ export class DataService {
 
   private _problemSource = new BehaviorSubject<Problem[]>([]);
   private _peopleSource = new BehaviorSubject<People[]>([]);
+  public history = [];
 
   constructor(private http:Http) { }
 
@@ -72,6 +73,14 @@ export class DataService {
   private handleError(error:any): Promise<any> {
     console.log('An error happened', error);
     return Promise.reject(error.body||error);
+  }
+
+  setHistory(history):void {
+    this.history = history;
+  }
+
+  getHistory(): number[] {
+    return this.history;
   }
 
 }

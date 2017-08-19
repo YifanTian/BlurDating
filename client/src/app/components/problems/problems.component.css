@@ -4,6 +4,7 @@ body {
     transition: background-color .5s;
 }
 
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -11,9 +12,9 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
+    transition: 0.3s; /* Add transition on hover */
     background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;
     padding-top: 60px;
 }
 
@@ -26,9 +27,14 @@ body {
     transition: 0.3s;
 }
 
-.sidenav a:hover, .offcanvas a:focus{
+ .sidenav a:hover{
     color: #f1f1f1;
-}
+} 
+
+/* On mouse-over, make the elements appear as they should */
+/* .sidenav a:hover{
+     left: 0; 
+} */
 
 .sidenav .closebtn {
     position: absolute;

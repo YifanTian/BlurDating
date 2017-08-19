@@ -23,9 +23,24 @@ let PROBLEMS = [
     answer1: 'yes',
     answer2: 'no'
   },
-
   {
     id: 4,
+    name: "Would you stay friends with an ex after a breakup?",
+    type: "relationship",
+    typeid: 1,
+    answer1: 'yes',
+    answer2: 'no'
+  },
+  {
+    id: 5,
+    name: "Is it possible to live with parents after marriage?",
+    type: "relationship",
+    typeid: 1,
+    answer1: 'yes',
+    answer2: 'no'
+  },
+  {
+    id: 6,
     name: "Do you mainly make decisions based on feelings??",
     type: "personality",
     typeid: 2,
@@ -33,7 +48,7 @@ let PROBLEMS = [
     answer2: 'no'
   },
   {
-    id: 5,
+    id: 7,
     name: "Do you believe in fate?",
     type: "personality",
     typeid: 2,
@@ -41,16 +56,31 @@ let PROBLEMS = [
     answer2: 'no'
   },
   {
-    id: 6,
+    id: 8,
     name: "Do you feel like you are in control of your life right now?",
     type: "personality",
     typeid: 2,
     answer1: 'yes',
     answer2: 'no'
   },
-
   {
-    id: 7,
+    id: 9,
+    name: "Are you a preparer or a procrastinator?",
+    type: "personality",
+    typeid: 2,
+    answer1: 'yes',
+    answer2: 'no'
+  },
+  {
+    id: 10,
+    name: "Are you highly influenced by what your friends do? (Peer pressure)",
+    type: "personality",
+    typeid: 2,
+    answer1: 'yes',
+    answer2: 'no'
+  },
+  {
+    id: 11,
     name: "Which type of song is more likely to get you in a romantic mood?",
     type: "music",
     typeid: 3,
@@ -58,7 +88,7 @@ let PROBLEMS = [
     answer2: 'R&B'
   },
   {
-    id: 8,
+    id: 12,
     name: "Which music genre would you rather listen to?",
     type: "music",
     typeid: 3,
@@ -66,16 +96,31 @@ let PROBLEMS = [
     answer2: 'Rock'
   },
   {
-    id: 9,
+    id: 13,
     name: "Do you like country music?",
     type: "music",
     typeid: 3,
     answer1: 'Yes',
     answer2: 'No'
   },
-
   {
-    id: 10,
+    id: 14,
+    name: "The Beatles or Rolling Stones?",
+    type: "music",
+    typeid: 3,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+  {
+    id: 15,
+    name: "Which Taylor Swift song do you like better?",
+    type: "music",
+    typeid: 3,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+  {
+    id: 16,
     name: "Do you enjoy going to live concerts?",
     type: "lifestyle",
     typeid: 4,
@@ -83,7 +128,7 @@ let PROBLEMS = [
     answer2: 'No'
   },
   {
-    id: 11,
+    id: 17,
     name: "I prefer the outdoors than staying at home during the weekend.",
     type: "lifestyle",
     typeid: 4,
@@ -91,16 +136,31 @@ let PROBLEMS = [
     answer2: 'No'
   },
   {
-    id: 12,
+    id: 18,
     name: "I must have 3 meals everyday.",
     type: "lifestyle",
     typeid: 4,
     answer1: 'Yes',
     answer2: 'No'
   },
-
   {
-    id: 13,
+    id: 19,
+    name: "I prefer the outdoors than staying at home during the weekend.",
+    type: "lifestyle",
+    typeid: 4,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+  {
+    id: 20,
+    name: "Are you 420 friendly?",
+    type: "lifestyle",
+    typeid: 4,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+  {
+    id: 21,
     name: "Mac n' cheese or simple salad?",
     type: "food",
     typeid: 5,
@@ -108,7 +168,7 @@ let PROBLEMS = [
     answer2: 'Salad'
   },
   {
-    id: 14,
+    id: 22,
     name: "Ketchup or Mustard?",
     type: "food",
     typeid: 5,
@@ -116,14 +176,29 @@ let PROBLEMS = [
     answer2: 'Mustard'
   },
   {
-    id: 15,
+    id: 23,
     name: "Which yogurt flavor do you like more?",
     type: "food",
     typeid: 5,
     answer1: 'Tart',
     answer2: 'Chocolate'
   },
-
+  {
+    id: 24,
+    name: "What brand of chocolate do you like better?",
+    type: "food",
+    typeid: 5,
+    answer1: 'Tart',
+    answer2: 'Chocolate'
+  },
+  {
+    id: 25,
+    name: "Which one is your go-to breakfast food?",
+    type: "food",
+    typeid: 5,
+    answer1: 'Tart',
+    answer2: 'Chocolate'
+  },
 ];
 
 const getProblems = function() {

@@ -3,15 +3,24 @@
     <h2>
       {{people.name}}
     </h2>
+    <!-- <br/> -->
     <img src="{{people.img}}" class="img-rounded" alt="Cinque Terre" width="304" height="236">
-    <p>
-      {{people.desc}}
-    </p>
-    <div class="list-group-item" *ngFor="let state of people.state">
-        <dl>
-          <p> {{state}} </p>
-        </dl>
-    </div> 
+    <h3> {{people.desc}} </h3>
+    <!-- <p>
+      <h3> {{people.desc}} </h3>
+    </p> -->
+    <!-- <br/> -->
+          <div class="list-group-item">
+            <dl>
+              <a href="{{ people.state.video.url }}"> {{ people.state.video.title }} </a>
+            </dl>
+            <dl>
+              <a href="{{ people.state.article.url }}"> {{ people.state.article.title }} </a>
+            </dl>
+            <dl>
+              {{ people.state.description }}
+            </dl>
+        </div> 
   </div>
   <div class="hidden-xs col-sm-12 col-md-8">
     <app-chat-window></app-chat-window>
