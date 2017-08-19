@@ -17,9 +17,6 @@
 
   <div class="container">
      <div class="col-xs-12 col-md-2">
-      <!-- <p>Profile</p>
-      <p>History</p>
-      <p>Setting</p> -->
 
           <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
@@ -44,6 +41,14 @@
     </div> 
 
     <div class="col-xs-12 col-md-10">
+
+      <label class="Typechoice"><input type="checkbox" [(ngModel)]="questionType[1]" id="Typechoice" name="choice" [value]=1 (click)="selectCategory(1)"> <strong class="font-choice">Relationship</strong> </label>
+      <label class="Typechoice"><input type="checkbox" [(ngModel)]="questionType[2]" id="Typechoice" name="choice" [value]=1 (click)="selectCategory(2)"> <strong class="font-choice">Personality</strong> </label>
+      <label class="Typechoice"><input type="checkbox" [(ngModel)]="questionType[3]" id="Typechoice" name="choice" [value]=1 (click)="selectCategory(3)"> <strong class="font-choice">Music</strong> </label>
+      <label class="Typechoice"><input type="checkbox" [(ngModel)]="questionType[4]" id="Typechoice" name="choice" [value]=1 (click)="selectCategory(4)"> <strong class="font-choice">Life Style</strong> </label>
+      <label class="Typechoice"><input type="checkbox" [(ngModel)]="questionType[5]" id="Typechoice" name="choice" [value]=1 (click)="selectCategory(5)"> <strong class="font-choice">Food</strong> </label>
+      <label class="Typechoice"><input type="checkbox" [(ngModel)]="questionType[0]" id="Typechoice" name="choice" [value]=1 (click)="selectCategory(0)"> <strong class="font-choice">Random</strong> </label>
+
       <div class="list-group">
           <a class="list-group-item" *ngFor="let answer of answerArray">
           <span class="{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}">
@@ -97,48 +102,76 @@
       <br/>
 
           <div class="list-group">
-          <a class="list-group-item" *ngFor="let match of matchArray" 
-          [routerLink]="['/peoples', match.id]">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="thumbnail">
-                    <img src="{{match.img}}" class="img-responsive" alt="Chania" width="260" height="245">
-                    <div class="caption">
+            <div class="list-group-item" *ngFor="let match of matchArray">
+
+              <div class="row">
+                    <div [ngClass]=" numfavs <= 1 || match.fav == true ? 'active' : 'unactive' ">
+
+                    <div class="col-md-3">
+                      <a class="thumbnail" [routerLink]="['/peoples', match.id]">
+                          <img src="{{match.img}}" class="img-responsive" alt="Chania" width="260" height="245">
+                      </a>
+
+                        <div [ngClass]="match.status? 'online' : 'offline' ">
+                          <strong> {{match.status ? 'Online' : 'Offline' }} </strong>
+                        </div>
+                        <!-- <button type="button" class="btn btn-danger">Leave a Message</button>&nbsp; -->
+                        <!-- <button type="button" class="btn btn-danger">Send a gift</button> -->
                     </div>
-                </div>
-              </div>
 
-              <div class="col-xs-6">
-                  <div class="a-card-pin">
-                    <div class="a-card-pin-icon">
-                        <img src="../../../img/pushpin-64.png" class="{{'a-card-' + match.fav}}" (click)="pin(match)">
+                    <div class="col-xs-3">
+
+                        <dl>
+                          Name: <strong class="title">{{match.name}}</strong>
+                        </dl>
+                        <dl>
+                          Age: <strong class="title">{{match.age}}</strong>
+                        </dl>
+                        <!-- <dl>
+                          Answers: <strong class="title">{{match.answers}}</strong>
+                        </dl> -->
+                        <dl>
+                          Similarity: <strong class="title">{{match.weight}}</strong>
+                        </dl>
+                        <!-- <dl>
+                          Faverite: <strong class="title">{{match.fav}}</strong>
+                        </dl>  -->
+                        <dl>
+                          <a class="title" [routerLink]="['/peoples', match.id]">View details »</a> &nbsp; &nbsp;
+                          <a class="title" [routerLink]="['/peoples', match.id]">Chat »</a>
+                        </dl>
+                          <button type="button" class="btn btn-danger">Poke</button>&nbsp; 
+                        <button type="button" class="btn btn-danger">Send a gift</button> 
+                    </div>
+
+                    <div class="col-xs-3">
+                      <strong class="title">Current state: </strong>
+                        <br/>  <br/>
+                      <div class="list-group-item" *ngFor="let state of match.state">
+                          <dl>
+                            <a href="{{state}}"> {{state}} </a>
+                          </dl>
+                      </div> 
+                        <!-- <strong class="title">Current state: </strong> {{match.state}} -->
+                    </div>
+
+                      <div class="col-xs-1">
+
+                          <br/>  <br/>  <br/>
+                          <div class="row">
+                          <!-- <h3> Love? </h3>  -->
+                            <div class="a-card-pin">
+                              <div class="a-card-pin-icon">
+                              <img src="../../../img/heart.jpeg" class="{{'a-card-' + match.fav}}" (click)="pin(match)">
+                              </div>
+                            </div> 
+                          </div>
                       </div>
-                    </div> 
-                  <dl>
-                    Name: <strong class="title">{{match.name}}</strong>
-                  </dl>
-                  <dl>
-                    Age: <strong class="title">{{match.age}}</strong>
-                  </dl>
-                  <!-- <dl>
-                    Answers: <strong class="title">{{match.answers}}</strong>
-                  </dl> -->
-                  <dl>
-                    Similarity: <strong class="title">{{match.weight}}</strong>
-                  </dl>
-                  <dl>
-                    Faverite: <strong class="title">{{match.fav}}</strong>
-                  </dl>
-                  <dl>
-                    <a class="btn" [routerLink]="['/peoples', match.id]">View details »</a>
-                    <a class="btn" [routerLink]="['/peoples', match.id]">Chat »</a>
-                  </dl>
-                  <button type="button" class="btn btn-danger">Leave a Message</button>&nbsp;&nbsp;&nbsp;
-                  <button type="button" class="btn btn-danger">Send a gift</button>
-              </div>
-            </div>
 
-          </a>
+                  </div>
+              </div>
+                
+            </div>
         </div>
     </div>
   </div> 

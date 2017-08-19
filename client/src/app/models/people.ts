@@ -4,6 +4,8 @@ export class People {
     name: String;
     age: number;
     img: String;
-    desc: String[];
     answers: {};
+    desc: String;
+    status: boolean;
+    state: String[]
 }

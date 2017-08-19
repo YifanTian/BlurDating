@@ -6,6 +6,14 @@ import { Match } from '../../models/match';
 
 import { Subscription } from 'rxjs/Subscription';
 
+class Type {
+    0: number;
+    1: number;
+    2: number;
+    3: number;
+    4: number;
+}
+
 @Component({
   selector: 'app-problems',
   templateUrl: './problems.component.html',
@@ -13,11 +21,16 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ProblemsComponent implements OnInit {
 
+  allproblems: Problem[];
+  shuffleProblems: Problem[];
   problems: Problem[];
   answerArray: Answer[];
   aArray = {};
   choices: number[] = [1,2,3];
+  question_choice: number[];
+  questionType: Type;
 
+  numfavs = 0;
   peoples: People[];
   matchArray: Match[];
 
@@ -30,6 +43,13 @@ export class ProblemsComponent implements OnInit {
     // this.initAnswers();
     this.getPeoples();
     // this.initMatches();
+  }
+
+  shuffle(a):void {
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
   }
 
   sortMatchesByAge(order: number) {
@@ -109,6 +129,14 @@ export class ProblemsComponent implements OnInit {
       match.img = people.img;
       match.weight = 0;
       match.fav = false;
+      match.status = people.status;
+      console.log(people);
+      // for(let state of people.state) {
+      //   console.log(state);
+      // }
+      console.log(people.state);
+      match.state = people.state.splice(0,2);
+      console.log(match.state);
       this.matchArray.push(match);
       // this.answerArray[problem.id] = 3;
     }
@@ -118,13 +146,70 @@ export class ProblemsComponent implements OnInit {
   pin(match:Match):void {
     // console.log(match.id + " pinned "+ match.fav);
     match.fav = !match.fav;
-    // console.log(match.fav);
+    match.fav == true? this.numfavs++ : this.numfavs--;
+    console.log(this.numfavs);
   }
 
   getProblems(): void {
+
+    this.questionType = new Type();
+    this.questionType[0] = 1;
+    this.questionType[1] = 0;
+    this.questionType[2] = 0;
+    this.questionType[3] = 0;
+    this.questionType[4] = 0;
+
+    this.question_choice = [0];
+
     // this.problems = this.data.getProblems();
     this.subscriptionProblem = this.data.getProblems()
-    .subscribe(problems => {this.problems = problems; this.initAnswers();} );
+    .subscribe(problems => {this.allproblems = problems; 
+      this.shuffleProblems = this.allproblems;
+      this.shuffle(this.shuffleProblems);
+      this.problems = this.shuffleProblems.slice(0,5);
+      this.initAnswers();} );
+  }
+
+  selectCategory(id): void {
+    console.log(this.question_choice);
+    if(id == 0) {
+      this.questionType[1] = 0;
+      this.questionType[2] = 0;
+      this.questionType[3] = 0;
+      this.questionType[4] = 0;
+      this.questionType[5] = 0;
+
+      var index = this.question_choice.indexOf(id);
+      if (index < 0){
+        this.question_choice = [0];
+      }  else {
+        this.question_choice.splice(index,1);
+      }
+
+    } else {
+      this.questionType[0] = 0;
+
+        var index0 = this.question_choice.indexOf(0);
+        if (index0 > -1) {
+            this.question_choice.splice(index0,1);
+        }
+        var index = this.question_choice.indexOf(id);
+        if (index < 0){
+          this.question_choice.push(id);
+        } else {
+          this.question_choice.splice(index,1);
+        }
+      }
+
+      this.problems = this.allproblems.filter( (problem) => ( this.question_choice.indexOf(problem.typeid)>=0) );
+      console.log(this.problems);
+      if(this.problems.length === 0) {
+        this.shuffle(this.shuffleProblems);
+        this.problems = this.shuffleProblems.slice(0,5);
+      }
+      console.log(this.question_choice);
+      console.log(this.problems);
+      this.initAnswers();
   }
 
   // getProblems(): void {

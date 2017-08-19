@@ -89,32 +89,39 @@ body {
   font-size: 1.2em;
 }
 
-.type-life {
+.type-relationship {
   background-color: #42ebf4;
 }
 
-.type-media {
+.type-music {
   background-color: #92cf5c;
 }
 
-.type-hobbies {
+.type-lifestyle {
   background-color: #dd0d1e;
 }
 
-.type-work {
+.type-food {
   background-color: #8d16e2;
 }
 
-.type-others {
+.type-personality {
   background-color: #0616e2;
 }
 
+.Typechoice {
+    height: 50px;
+    width: 125px;
+    font-size: 20;
+    /* background-color: #92cf5c; */
+    opacity: .9;
+    margin: 0px;
+    padding: 0px;
+}
 
-
-
-
-
-
+.font-choice {
+    font-size: 1.4em;
+}
 
 * {
     font-family: 'Open Sans', sans-serif;
@@ -252,6 +259,26 @@ img {
 }
 
 
+.active {
+    opacity: 1.0;
+}
+
+.unactive {
+    opacity: 0.1;
+    pointer-events: none
+}
+
+.online {
+    height: 20px;
+    font-size: 120%;
+    color:green;
+}
+
+.offline {
+    height: 20px;
+    font-size: 120%;
+    color:red;
+}
 
 
 .category {

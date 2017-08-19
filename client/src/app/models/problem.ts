@@ -3,6 +3,8 @@
 export class Problem {
     id: number;
     name: String;
-    desc: String;
-    type: String;
+    type: string;
+    typeid: number
+    answer1: string;
+    answer2: string
 }

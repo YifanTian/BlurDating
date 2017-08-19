@@ -5,8 +5,10 @@ export class Match {
     name: String;
     age: number;
     img: String;
-    desc: String[];
+    desc: String;
     weight: number;
     answers: {};
     fav: boolean;
+    status: boolean;
+    state: String[]
 }

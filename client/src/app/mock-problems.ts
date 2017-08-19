@@ -4,36 +4,127 @@ import { Problem } from './models/problem';
 export const PROBLEMS: Problem[] = [
 {
     id: 1,
-    name: "Do you like traveling?",
-    desc: `Given an array of integers, find two numbers such that they add up to a specific target number.
-
-The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are NOT zero-based.`,
-    type: "life"
+    name: "Are you romantic?",
+    type: "relationship",
+    typeid: 1,
+    answer1: 'yes',
+    answer2: 'no'
   },
   {
     id: 2,
-    name: "Do you like novel?",
-    desc: `Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.`,
-    type: "media"
+    name: "Do you believe in love at first sight??",
+    type: "relationship",
+    typeid: 1,
+    answer1: 'yes',
+    answer2: 'no'
   },
   {
     id: 3,
-    name: "Do you like video game?",
-    desc: `Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target?
-
-Find all unique quadruplets in the array which gives the sum of target.`,
-    type: "hobbies"
+    name: "Could you still trust a friend that's lied to you once??",
+    type: "relationship",
+    typeid: 1,
+    answer1: 'yes',
+    answer2: 'no'
   },
+
   {
     id: 4,
-    name: "Are you working?",
-    desc: `Given an array of integers, how many three numbers can be found in the array, so that we can build an triangle whose three edges length is the three numbers that we find?`,
-    type: "work"
+    name: "Do you mainly make decisions based on feelings??",
+    type: "personality",
+    typeid: 2,
+    answer1: 'yes',
+    answer2: 'no'
   },
   {
     id: 5,
-    name: "Are you outgoing?",
-    desc: `Given an array of n integer with duplicate number, and a moving window(size k), move the window at each iteration from the start of the array, find the maximum number inside the window at each moving.`,
-    type: "others"
-  }
+    name: "Do you believe in fate?",
+    type: "personality",
+    typeid: 2,
+    answer1: 'yes',
+    answer2: 'no'
+  },
+  {
+    id: 6,
+    name: "Do you feel like you are in control of your life right now?",
+    type: "personality",
+    typeid: 2,
+    answer1: 'yes',
+    answer2: 'no'
+  },
+
+  {
+    id: 7,
+    name: "Which type of song is more likely to get you in a romantic mood?",
+    type: "music",
+    typeid: 3,
+    answer1: 'Jazz',
+    answer2: 'R&B'
+  },
+  {
+    id: 8,
+    name: "Which music genre would you rather listen to?",
+    type: "music",
+    typeid: 3,
+    answer1: 'Jazz',
+    answer2: 'Rock'
+  },
+  {
+    id: 9,
+    name: "Do you like country music?",
+    type: "music",
+    typeid: 3,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+
+  {
+    id: 10,
+    name: "Do you enjoy going to live concerts?",
+    type: "lifestyle",
+    typeid: 4,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+  {
+    id: 11,
+    name: "I prefer the outdoors than staying at home during the weekend.",
+    type: "lifestyle",
+    typeid: 4,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+  {
+    id: 12,
+    name: "I must have 3 meals everyday.",
+    type: "lifestyle",
+    typeid: 4,
+    answer1: 'Yes',
+    answer2: 'No'
+  },
+
+  {
+    id: 13,
+    name: "Mac n' cheese or simple salad?",
+    type: "food",
+    typeid: 4,
+    answer1: "Mac n' cheese",
+    answer2: 'Salad'
+  },
+  {
+    id: 14,
+    name: "Ketchup or Mustard?",
+    type: "food",
+    typeid: 4,
+    answer1: 'Ketchup',
+    answer2: 'Mustard'
+  },
+  {
+    id: 15,
+    name: "Which yogurt flavor do you like more?",
+    type: "food",
+    typeid: 4,
+    answer1: 'Tart',
+    answer2: 'Chocolate'
+  },
+
 ];

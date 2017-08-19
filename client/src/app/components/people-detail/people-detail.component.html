@@ -1,14 +1,18 @@
 <div class="container" *ngIf = "people">
   <div class="col-xs-12 col-md-4">
     <h2>
-      {{people.id}}. {{people.name}}
+      {{people.name}}
     </h2>
+    <img src="{{people.img}}" class="img-rounded" alt="Cinque Terre" width="304" height="236">
     <p>
       {{people.desc}}
     </p>
-    <img src="{{people.img}}" class="img-rounded" alt="Cinque Terre" width="304" height="236">
+    <div class="list-group-item" *ngFor="let state of people.state">
+        <dl>
+          <p> {{state}} </p>
+        </dl>
+    </div> 
   </div>
-
   <div class="hidden-xs col-sm-12 col-md-8">
     <app-chat-window></app-chat-window>
   </div>

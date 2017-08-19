@@ -11,8 +11,10 @@ const DEFAULT_PEOPLE: People = Object.freeze({
     name: '',
     age: 18,
     img: '',  
-    desc: [''],
-    answers: ''
+    desc: '',
+    answers: '',
+    status: true,
+    state: []
 });
 
 @Component({
