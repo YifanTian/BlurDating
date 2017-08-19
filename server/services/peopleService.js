@@ -60,7 +60,7 @@ let PEOPLES = [
     status: true,
     state: {
         video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
-        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        article: { url: 'https://www.pinterest.com/categories/popular/', title: 'I like this article!' },
         description: `I'm feeling good`
     }
   },
@@ -74,7 +74,7 @@ let PEOPLES = [
     status: false,
     state: {
         video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
-        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        article: { url: 'https://www.pinterest.com/categories/popular/', title: 'I like this article!' },
         description: `I'm feeling good`
     }
   },
@@ -88,7 +88,7 @@ let PEOPLES = [
     status: true,
     state: {
         video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
-        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        article: { url: 'https://www.pinterest.com/categories/popular/', title: 'I like this article!' },
         description: `I'm feeling good`
     }
   },
@@ -102,7 +102,7 @@ let PEOPLES = [
     status: false,
     state: {
         video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
-        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        article: { url: 'https://www.pinterest.com/categories/popular/', title: 'I like this article!' },
         description: `I'm feeling good`
     }
   },
@@ -116,7 +116,7 @@ let PEOPLES = [
     status: true,
     state: {
         video: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I just watched a great movie!' },
-        article: { url: 'http://www.imdb.com/title/tt5013056/?ref_=vi_tr_mp_t_19', title: 'I like this article!' },
+        article: { url: 'https://www.pinterest.com/categories/popular/', title: 'I like this article!' },
         description: `I'm feeling good`
     }
   }

@@ -13,10 +13,10 @@
   </a>
   <div class="list-group">
     <a class="list-group-item" *ngFor="let answer of answerArray">
-    <span class="{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}">
+    <!-- <span class="{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}">
       {{answer.type}}
-    </span>
-    <strong class="title">{{answer.id}}  {{answer.name}} </strong>
+    </span> -->
+    <strong class="title">{{answer.name}} </strong>
       <div class="pull-right">
         <strong class="title">{{answer.choice}}</strong>
       </div>
@@ -34,9 +34,9 @@
 
       <div class="form-group radio">
         <h4>Your Choice:</h4> 
-        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=1 (click)="selectEntity(answer.id,1)">Yes</label>
-        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=2 (click)="selectEntity(answer.id,2)">No</label>
-        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=3 (click)="selectEntity(answer.id,3)">Unknown</label>
+        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=1 >Yes</label>
+        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=2 >No</label>
+        <label class="center-block"><input type="radio" [(ngModel)]="answer.choice" id="choice" name="choice" [value]=3 >Unknown</label>
       </div>
     </form>
     </a> 
@@ -53,6 +53,14 @@
       </div>
 
       <div class="form-group">
+        <label for="peopleAge">People age</label>
+        <input name="peopleAge" id="peopleAge" class="form-control"
+              type="text" required placeholder="Enter your name"
+              [(ngModel)]="newPeople.age">
+      </div>
+
+
+      <div class="form-group">
         <label for="problemDesc">People description</label>
         <textarea name="problemDesc" id="problemDesc" class="form-control"
                   required placeholder="Enter your description"
@@ -63,7 +71,7 @@
       <div class="form-group">
         <label for="difficulty">Type</label>
         <select class="form-control" id="difficulty" name="difficulty"
-                [(ngModel)]="newPeople.desc">
+                [(ngModel)]="newPeople.answers">
           <option *ngFor="let difficulty of difficulties" [value]="difficulty">
             {{difficulty}}
           </option>

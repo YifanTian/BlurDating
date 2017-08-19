@@ -330,7 +330,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/landing/landing.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  \n\n\n<div class=\"container\">\n  <a class=\"list-group-item\" [routerLink]=\"['/problems']\">\n\n      <div class=\"row\">\n        <h1>Welcome to Blur!</h1>\n        <!-- <img src=\"../../../img/Last_Round.jpg\" class=\"img-rounded\" alt=\"Cinque Terre\" width=\"304\" height=\"336\"> -->\n      </div>\n\n    <!-- <img src=\"{{match.img}}\" class=\"img-responsive\" alt=\"Chania\" width=\"260\" height=\"245\"> -->\n  </a>\n  <div class=\"list-group\">\n    <a class=\"list-group-item\" *ngFor=\"let answer of answerArray\">\n    <span class=\"{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}\">\n      {{answer.type}}\n    </span>\n    <strong class=\"title\">{{answer.id}}  {{answer.name}} </strong>\n      <div class=\"pull-right\">\n        <strong class=\"title\">{{answer.choice}}</strong>\n      </div>\n\n    <form #formRef=\"ngForm\">\n      <!-- <div class=\"form-group\">\n        <label for=\"Choice\">Choice</label>\n        <select class=\"form-control\" id=\"choice\" name=\"choice\"\n                [(ngModel)]=\"answer.choice\">\n          <option *ngFor=\"let choice of choices\" [value]=\"choice\">\n            {{choice}}\n          </option>\n        </select>\n      </div>  -->\n\n      <div class=\"form-group radio\">\n        <h4>Your Choice:</h4> \n        <label class=\"center-block\"><input type=\"radio\" [(ngModel)]=\"answer.choice\" id=\"choice\" name=\"choice\" [value]=1 (click)=\"selectEntity(answer.id,1)\">Yes</label>\n        <label class=\"center-block\"><input type=\"radio\" [(ngModel)]=\"answer.choice\" id=\"choice\" name=\"choice\" [value]=2 (click)=\"selectEntity(answer.id,2)\">No</label>\n        <label class=\"center-block\"><input type=\"radio\" [(ngModel)]=\"answer.choice\" id=\"choice\" name=\"choice\" [value]=3 (click)=\"selectEntity(answer.id,3)\">Unknown</label>\n      </div>\n    </form>\n    </a> \n  </div>\n\n  <div>\n    <form #formRef=\"ngForm\">\n\n      <div class=\"form-group\">\n        <label for=\"peopleName\">People name</label>\n        <input name=\"peopleName\" id=\"peopleName\" class=\"form-control\"\n              type=\"text\" required placeholder=\"Enter your name\"\n              [(ngModel)]=\"newPeople.name\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"problemDesc\">People description</label>\n        <textarea name=\"problemDesc\" id=\"problemDesc\" class=\"form-control\"\n                  required placeholder=\"Enter your description\"\n                  [(ngModel)]=\"newPeople.desc\" rows=\"3\">\n        </textarea>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"difficulty\">Type</label>\n        <select class=\"form-control\" id=\"difficulty\" name=\"difficulty\"\n                [(ngModel)]=\"newPeople.desc\">\n          <option *ngFor=\"let difficulty of difficulties\" [value]=\"difficulty\">\n            {{difficulty}}\n          </option>\n        </select>\n      </div>\n      \n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <button type=\"submit\" class=\"btn btn-primary pull-right\"\n                  (click)=\"addPeople()\"\n          >Add people</button>\n        </div>\n      </div>\n    </form>\n  </div>\n  <br/>\n\n</div>"
+module.exports = "  \n\n\n<div class=\"container\">\n  <a class=\"list-group-item\" [routerLink]=\"['/problems']\">\n\n      <div class=\"row\">\n        <h1>Welcome to Blur!</h1>\n        <!-- <img src=\"../../../img/Last_Round.jpg\" class=\"img-rounded\" alt=\"Cinque Terre\" width=\"304\" height=\"336\"> -->\n      </div>\n\n    <!-- <img src=\"{{match.img}}\" class=\"img-responsive\" alt=\"Chania\" width=\"260\" height=\"245\"> -->\n  </a>\n  <div class=\"list-group\">\n    <a class=\"list-group-item\" *ngFor=\"let answer of answerArray\">\n    <!-- <span class=\"{{'pull-left label type type-' + answer.type.toLocaleLowerCase()}}\">\n      {{answer.type}}\n    </span> -->\n    <strong class=\"title\">{{answer.name}} </strong>\n      <div class=\"pull-right\">\n        <strong class=\"title\">{{answer.choice}}</strong>\n      </div>\n\n    <form #formRef=\"ngForm\">\n      <!-- <div class=\"form-group\">\n        <label for=\"Choice\">Choice</label>\n        <select class=\"form-control\" id=\"choice\" name=\"choice\"\n                [(ngModel)]=\"answer.choice\">\n          <option *ngFor=\"let choice of choices\" [value]=\"choice\">\n            {{choice}}\n          </option>\n        </select>\n      </div>  -->\n\n      <div class=\"form-group radio\">\n        <h4>Your Choice:</h4> \n        <label class=\"center-block\"><input type=\"radio\" [(ngModel)]=\"answer.choice\" id=\"choice\" name=\"choice\" [value]=1 >Yes</label>\n        <label class=\"center-block\"><input type=\"radio\" [(ngModel)]=\"answer.choice\" id=\"choice\" name=\"choice\" [value]=2 >No</label>\n        <label class=\"center-block\"><input type=\"radio\" [(ngModel)]=\"answer.choice\" id=\"choice\" name=\"choice\" [value]=3 >Unknown</label>\n      </div>\n    </form>\n    </a> \n  </div>\n\n  <div>\n    <form #formRef=\"ngForm\">\n\n      <div class=\"form-group\">\n        <label for=\"peopleName\">People name</label>\n        <input name=\"peopleName\" id=\"peopleName\" class=\"form-control\"\n              type=\"text\" required placeholder=\"Enter your name\"\n              [(ngModel)]=\"newPeople.name\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"peopleAge\">People age</label>\n        <input name=\"peopleAge\" id=\"peopleAge\" class=\"form-control\"\n              type=\"text\" required placeholder=\"Enter your name\"\n              [(ngModel)]=\"newPeople.age\">\n      </div>\n\n\n      <div class=\"form-group\">\n        <label for=\"problemDesc\">People description</label>\n        <textarea name=\"problemDesc\" id=\"problemDesc\" class=\"form-control\"\n                  required placeholder=\"Enter your description\"\n                  [(ngModel)]=\"newPeople.desc\" rows=\"3\">\n        </textarea>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"difficulty\">Type</label>\n        <select class=\"form-control\" id=\"difficulty\" name=\"difficulty\"\n                [(ngModel)]=\"newPeople.answers\">\n          <option *ngFor=\"let difficulty of difficulties\" [value]=\"difficulty\">\n            {{difficulty}}\n          </option>\n        </select>\n      </div>\n      \n      <div class=\"row\">\n        <div class=\"col-md-12\">\n          <button type=\"submit\" class=\"btn btn-primary pull-right\"\n                  (click)=\"addPeople()\"\n          >Add people</button>\n        </div>\n      </div>\n    </form>\n  </div>\n  <br/>\n\n</div>"
 
 /***/ }),
 
@@ -361,7 +361,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var DEFAULT_PEOPLE = Object.freeze({
     id: 9999,
     name: '',
-    age: 18,
+    age: 0,
     img: '',
     desc: '',
     answers: '',
@@ -372,7 +372,7 @@ var LandingComponent = (function () {
     function LandingComponent(data) {
         this.data = data;
         this.newPeople = Object.assign({}, DEFAULT_PEOPLE);
-        this.difficulties = ['easy', 'medium', 'hard', 'super'];
+        this.difficulties = ['friend', 'short term', 'long term', 'marriage'];
         this.aArray = {};
         this.choices = [1, 2, 3];
         this.subscriptionProblem = __WEBPACK_IMPORTED_MODULE_2_rxjs_Subscription__["Subscription"];
@@ -387,18 +387,32 @@ var LandingComponent = (function () {
             var ans = new __WEBPACK_IMPORTED_MODULE_1__models_answer__["a" /* Answer */]();
             ans.id = problem.id;
             ans.name = problem.name;
-            ans.type = problem.type;
+            ans.type = '';
             ans.choice = 3;
             this.answerArray.push(ans);
             // this.answerArray[problem.id] = 3;
         }
-        // console.log(this.answerArray);
+        console.log(this.answerArray);
     };
     LandingComponent.prototype.getProblems = function () {
-        var _this = this;
         // this.problems = this.data.getProblems();
-        this.subscriptionProblem = this.data.getProblems()
-            .subscribe(function (problems) { _this.problems = problems; _this.initAnswers(); });
+        // this.subscriptionProblem = this.data.getProblems()
+        // .subscribe(problems => {this.problems = problems; this.initAnswers();} );
+        this.problems = [];
+        this.problems.push({
+            id: 1,
+            name: "Important Problem1."
+        });
+        this.problems.push({
+            id: 2,
+            name: "Important Problem2."
+        });
+        this.problems.push({
+            id: 3,
+            name: "Important Problem3."
+        });
+        console.log(this.problems);
+        this.initAnswers();
     };
     LandingComponent.prototype.addPeople = function () {
         // this.data.addProblem(this.newPeople)
