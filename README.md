@@ -15,7 +15,7 @@ or
 2. cd BlurDating.
 3. cd client
 4. npm install, (if npm is not installed, install Node.js)
-5. ng build
+5. ng build (install angular-cli first, npm install -g @angular/cli)
 6. cd server
 7. npm install
 8. npm start
